@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12478530-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-12478530-2');
+
+    window['_fs_debug'] = false;
+    window['_fs_host'] = 'fullstory.com';
+    window['_fs_org'] = 'G18A4';
+    window['_fs_namespace'] = 'FS';
+    (function (m, n, e, t, l, o, g, y) {
+      if (e in m) { if (m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); } return; }
+      g = m[e] = function (a, b, s) { g.q ? g.q.push([a, b, s]) : g._api(a, b, s); }; g.q = [];
+      o = n.createElement(t); o.async = 1; o.src = 'https://' + _fs_host + '/s/fs.js';
+      y = n.getElementsByTagName(t)[0]; y.parentNode.insertBefore(o, y);
+      g.identify = function (i, v, s) { g(l, { uid: i }, s); if (v) g(l, v, s) }; g.setUserVars = function (v, s) { g(l, v, s) }; g.event = function (i, v, s) { g('event', { n: i, p: v }, s) };
+      g.shutdown = function () { g("rec", !1) }; g.restart = function () { g("rec", !0) };
+      g.consent = function (a) { g("consent", !arguments.length || a) };
+      g.identifyAccount = function (i, v) { o = 'account'; v = v || {}; v.acctId = i; g(o, v) };
+      g.clearUserCookie = function () { };
+    })(window, document, window['_fs_namespace'], 'script', 'user');
+  </script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="erc20, tokens, mintable, mint, supply">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="Merkle Blue">
+  <meta name="description" content="This tutorial will guide you through the process of connecting your deployed crowdsale contract with the webpage on your website using Web3 Javascript library." />
+  <title>Connecting Your ICO Contract With a Website Using Web3 - YiDaiBi</title>
+  <link rel="canonical" href="web3-integration.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Connecting Your ICO Contract With a Website Using Web3 - YiDaiBi" />
+  <meta property="og:description" content="This tutorial will guide you through the process of connecting your deployed crowdsale contract with the webpage on your website using Web3 Javascript library." />
+  <meta property="og:image" content="https://tokenmint.io/blog/img/web3-integration.png" />
+  <meta property="og:url" content="https://tokenmint.io/blog/web3-integration.html" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Connecting Your ICO Contract With a Website Using Web3 - YiDaiBi" />
+  <meta name="twitter:description" content="This tutorial will guide you through the process of connecting your deployed crowdsale contract with the webpage on your website using Web3 Javascript library." />
+  <meta name="twitter:image" content="https://tokenmint.io/blog/img/web3-integration.png" />
+  <meta name="twitter:url" content="https://tokenmint.io/blog/web3-integration.html" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/line-icons.css">
+  <link rel="stylesheet" href="../css/owl.carousel.css">
+  <link rel="stylesheet" href="../css/owl.theme.css">
+  <link rel="stylesheet" href="../css/nivo-lightbox.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/slicknav.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/datatables.min.css"/>
+  <link rel="icon" href="../img/favicon.ico" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <!-- Header Section Start -->
+  <header id="hero-area" data-stellar-background-ratio="0.5">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><img class="img-fulid" src="../img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lnr lnr-menu"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav mr-auto w-100 justify-content-end">
+            <li class="nav-item"><a class="nav-link page-scroll" href="../index.html#hero-area">Home</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="../create-erc20-token.html">Create Token</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="../create-ico.html">Create ICO</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="web3-integration.html#contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="index.html">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Start -->
+      <ul class="mobile-menu">
+        <li><a class="page-scroll" href="../index.html#hero-area">Home</a></li>
+        <li><a class="page-scroll" href="../create-erc20-token.html">Create Token</a></li>
+        <li><a class="page-scroll" href="../create-ico.html">Create ICO</a></li>
+        <li><a class="page-scroll" href="web3-integration.html#contact">Contact</a></li>
+        <li><a class="page-scroll" href="index.html">Blog</a></li>
+      </ul>
+      <!-- Mobile Menu End -->
+
+    </nav>
+    <!-- Navbar End -->
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <div class="contents text-center">
+            <h2 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">YiDaiBi Blog</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header Section End -->
+
+  <!-- Blog text Section -->
+  <section class="section">
+    <!-- Container Starts -->
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Connecting Your ICO Contract With a Website Using Web3</h1>
+        <hr class="lines">
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-sm-12">
+          <div class="wow fadeInDown blog-text" data-wow-delay="0.2s">
+            <p>
+              <img src="img/web3-integration.png" alt="Web3 Integration" class="responsive-image">
+            </p>
+
+            <p>This tutorial will guide you through the process of connecting your deployed crowdsale contract with the
+              webpage on your website using Web3 Javascript library. Once your Ethereum contracts are connected with your
+              website, you are one step closer to creating a successful ICO. The only thing left is to invite your investors
+              to your landing page so they can invest in your token from their browsers in just a few clicks. Getting
+              traffic to your website and marketing is out of scope of this tutorial.
+            </p>
+            <p>This tutorial assumes you have deployed <a href="increasing-price-crowdsale.html">Increasing Price Crowdsale</a>
+              using our <a href="../app/index.html#/ico">ICO Generator tool</a>. If you want to deploy a different
+              kind of crowdsale contract, check out our <a href="../create-ico.html">Crowdsales page</a>
+              for more options.</p>
+
+            <h2>Example Sales Page</h2>
+            <p>We have deployed a sample crowdsale contract to the Ropsten testnet to showcase how to interact with it. You will
+            need <a href="https://metamask.io">MetaMask</a> or any other <a href="web-3-enabled-ethereum-wallets-and-browsers.html">Web3 Ethereum wallet</a>
+             to interact with it. We have also deployed the Example Sales Page which interacts with the crowdsale contract.
+             We have included functions for fetching data from the contract such as token balance, and current price of
+             token, as well as functions that change the contract state such as buy tokens, withdraw tokens, and claim
+             refund. All the elements that we explain further in this tutorial are included in the page. </p>
+
+             <h4><a href="../web3-integration/buy-page.html">Example Sales Page</a></h4>
+
+             <p>As you can see, the page is a bare html file without any css styling. This is because you'd want to integrate
+               your own sales page on your website, which should have a styling on it's own. Our page only showcases functionality.</p>
+            <p>Example page uses web3 library, which is located in the same folder. We have inluded both files in the zip file, which can be
+              <a href="../web3-integration/web3-integration.zip">downloaded here</a>. You can start integrating web3 in your
+              own html template from the Example page, or keep reading this tutorial to understand how it works. </p>
+
+            <h2>Setting Up Page</h2>
+            <p>Before calling contract's functions, make sure you import "web3.min.js" to your page. After that you'll need to
+              instantiate the contract instance so that you can call contract methods. Take a look at the code bellow:</p>
+            <textarea style="width: 100%; height: 250px;">
+<!doctype html>
+<html>
+<head>
+    <title>Crowdsale Page</title>
+    <script src="https://tokenmint.io/blog/web3.min.js"></script>
+    <script type="text/javascript">
+      // variables used in the file, token name and symbol are just for convinience
+      var crowdsaleAddress = "0xCa7532c24aA2B2C1389AC8B1B6018e0eE0c8e9c4";
+      var tokenName = "Example Token";
+      var tokenSymbol = "EXT";
+      var account = "";
+
+      // create web3 object
+      if (window.ethereum) {
+        web3 = new Web3(window.ethereum);
+      }
+
+      // create Increasing Price Crowdsale object using ABI and address
+      var IncreasingPriceCrowdsaleABI = JSON.stringify([/* ABI goes here, check out example page */]);
+      var IncreasingPriceCrowdsaleContract = web3.eth.contract(JSON.parse(IncreasingPriceCrowdsaleABI));
+      var IncreasingPriceCrowdsaleInstance = IncreasingPriceCrowdsaleContract.at(crowdsaleAddress);
+
+      // get account from web3
+      web3.eth.getAccounts((err, ret) => {
+        account = ret;
+      });
+    </script>
+    <!-- javascript header functions go here -->
+
+</head>
+<body>
+
+    <!-- body goes here -->
+
+</body>
+</html>
+            </textarea>
+            <p>We imported web3 library, created some variables for later use, instantiated web3 object using Metamask injected object, instantiated javascript
+              represented contract object, and grabbed ethereum account from web3. Make sure you paste the ABI string from example page. </p>
+
+            <h2>Check Web3 Wallet Connection</h2>
+            <p>Next, you might want to check if investor is using Web3 browser, and inform him of his next steps if necessary. We'll create a
+              function in the head that will check if Web3 object is present, and show a note to investor: </p>
+            <textarea style="width: 100%; height: 250px;">
+<head>
+  <script type="text/javascript">
+    // checks if MetaMask wallet has injected Web3 object
+    function isWeb3Connected() {
+      if(window.ethereum) {
+        document.getElementById("web3-wallet").innerText = "yes";
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>Web3 wallet is connected: <span id="web3-wallet">no. Please use MetaMask to interact with Ethereum.</span></p>
+</body>
+            </textarea>
+
+
+            <h2>Get Account Info</h2>
+            <p>Since we have investor's account, we can now get some info like ETH balance, token balance, etc.: </p>
+            <textarea style="width: 100%; height: 250px;">
+<head>
+  <script type="text/javascript">
+    // get my address, ETH and token balance, and current rate (price)
+    function getAccountInfo() {
+      web3.eth.getBalance(web3.eth.accounts[0], function(err, ethBalance) {
+        IncreasingPriceCrowdsaleInstance.balanceOf(web3.eth.accounts[0], (error, tokenBalance) => {
+          document.getElementById("my-address").innerText = web3.eth.accounts[0];
+          document.getElementById("my-eth-balance").innerText = web3.fromWei(ethBalance) + " ETH";
+          document.getElementById("my-token-balance").innerText = web3.fromWei(tokenBalance) + " " + tokenSymbol;
+          document.getElementById("token-name").innerText = tokenName + " (" + tokenSymbol + ")";
+          isWeb3Connected();
+          getCurrentRate();
+        });
+      });
+    }
+  </script>
+</head>
+<body onload="getAccountInfo()">
+  <p>Web3 wallet is connected: <span id="web3-wallet">no. Please use MetaMask to interact with Ethereum.</span></p>
+  <p>My address: <span id="my-address">Web3 not connected.</span> </p>
+  <p>My ETH balance: <span id="my-eth-balance">Web3 not connected.</span></p>
+  <button onclick="getAccountInfo()">Update All</button>
+</body>
+            </textarea>
+            Note that function getAccountInfo() is called when body of the page is loaded. We also added a button Update All
+            which calls getAccountInfo when user clicks on it and updates text on page on demand.
+
+            <h2>Buy Tokens</h2>
+            <p>Investor can buy tokens in two ways: </p>
+            <ul>
+              <li> - by directly sending ETH to crowdsale contract address: 0xCa7532c24aA2B2C1389AC8B1B6018e0eE0c8e9c4, or</li>
+              <li> - by calling buyTokens() function on the crowdsale contract.</li>
+            </ul>
+            <br>
+            <p>Sending ETH directly doesn't require Web3 wallet, any wallet can do that. Make sure that you mention this option
+            to your investors and list contract's address on your sales page. Also note that since sending ETH as a normal
+            transaction to the contract does invoke contract's functions, 21000 gas might not be enough. You might need to
+            tell them to increase gas limit (not gas price).</p>
+            <p>Here's how to call buyTokens() function of the crowdsale contract:</p>
+            <textarea style="width: 100%; height: 250px;">
+<head>
+  <script type="text/javascript">
+    // buys tokens for specified amount of ETH (specified in input field with id: buyAmount)
+    function buyTokens() {
+      var amount = document.getElementById("buyAmount").value;
+      IncreasingPriceCrowdsaleInstance.buyTokens(account, {value: web3.toWei(amount)}, (error, result) => {
+          document.getElementById("buyTokens").innerText = "TX ID: " + result;
+      });
+    }
+  </script>
+</head>
+<body onload="getAccountInfo()">
+  <form method="post" onsubmit="return false">
+      Enter amount of ETH you want to invest: <input id="buyAmount" type="text" name="buyAmount">
+      <input type="submit" value="Buy Tokens" onclick="buyTokens()">
+  </form>
+  <p><span id="buyTokens"></span></p>
+</body>
+            </textarea>
+            <p>Investor will first specify in the input field how much ETH he wants to invest, and then click Buy Tokens button. Function buyTokens() will
+              call buyTokens(..) function on the crowsdale contract with account and value as arguments. As soon as transaction id is available,
+              the function will display it to investor.
+            </p>
+
+            <h2>Withdraw Tokens</h2>
+            <p>Since Increasing Price Crowdsale is post-delivery, meaning that tokens and ETH are delivered after successful crowdsale ending,
+              investors must invoke withdrawFunds(..) method on the crowdsale contract to finally receive their tokens to their address.
+            Before calling withdrawTokens function their tokens are locked in crowdsale contract. Here's a code snippet: </p>
+            <textarea style="width: 100%; height: 250px;">
+<head>
+  <script type="text/javascript">
+    // investors MUST withdraw their tokens after crowdsale is successful (goal reached before end time)
+    function withdrawTokens() {
+      IncreasingPriceCrowdsaleInstance.withdrawTokens(account, (error, result) => {
+        document.getElementById("withdraw-tokens").innerText = "TX ID: " + result;
+      });
+    }
+  </script>
+</head>
+<body onload="getAccountInfo()">
+  <p>After successful crowdsale: <span id="withdraw-tokens"></span>
+  <button onclick="withdrawTokens()">Withdraw Tokens</button></p>
+</body>
+            </textarea>
+
+            <h2>Claim Refund</h2>
+            <p>If crowdsale fails (ends before the goal is reached), investors are entitled to claim refund and get their ETH back.
+              They can do so by calling claimRefund(..) method of the crowdsale contract. Here's a code snipped: </p>
+            <textarea style="width: 100%; height: 250px;">
+<head>
+  <script type="text/javascript">
+    // investor should claim refund if crowdsale is failed (goal not reached before end time)
+    function claimRefund() {
+      IncreasingPriceCrowdsaleInstance.claimRefund(account, (error, result) => {
+        document.getElementById("claim-refund").innerText = "TX ID: " + result;
+      });
+    }
+  </script>
+</head>
+<body onload="getAccountInfo()">
+  <p>After failed crowdsale: : <span id="claim-refund"></span>
+  <button onclick="claimRefund()">Claim Refund</button></p>
+</body>
+            </textarea>
+
+            <p>Congratulations! You have now connected your website with the Ethereum crowdsale contract, and your ICO is ready to accept investments.</p>
+
+            <h2>Share This Post</h2>
+
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_email"></a>
+            <a class="a2a_button_whatsapp"></a>
+            <a class="a2a_button_telegram"></a>
+            <a class="a2a_button_viber"></a>
+            <a class="a2a_button_wechat"></a>
+            <a class="a2a_button_facebook_messenger"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+
+            <h2>What's Next</h2>
+            <p>If you've completed this tutorial, we recommend you follow up with these tutorials:</p>
+
+            <h5><a href="web-3-enabled-ethereum-wallets-and-browsers.html">Web 3.0-enabled Ethereum Wallets and Browsers</a></h5>
+            <h5><a href="increasing-price-crowdsale.html">Increasing Price Crowdsale Explained</a></h5>
+
+            <h2>Connect With Us</h2>
+            <p>Thank you for reading this far! You can: </br>
+              - follow us on <a href="https://twitter.com/tokenmint_io" target="_blank" rel="noopener">Twitter</a></br>
+              - subscribe to our channel on <a href="https://www.youtube.com/channel/UClRNqrEowqovrSiV72itc8Q" target="_blank" rel="noopener">Youtube</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Container Ends -->
+  </section>
+  <!-- How It Work Section Ends -->
+
+  <!-- Contact Section Start -->
+  <section id="contact" class="section" data-stellar-background-ratio="-0.2">
+    <div class="contact-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="contact-us">
+              <h3>Contact us</h3>
+              <div class="contact-address">
+                <p>We are <a href="https://merkleblue.com">Merkle Blue</a> DOO, a blockchain startup.</p>
+                <p>Vardarska 1c/54, 21000 Novi Sad, Serbia </p>
+                <p class="phone">Phone: <span>(+381 64 321 2640)</span></p>
+                <p class="email">E-mail: <span>(yidaibi@zhenailian.com)</span></p>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li class="twitter"><a href="https://twitter.com/tokenmint_io" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+                  <li class="youtube"><a href="https://www.youtube.com/channel/UClRNqrEowqovrSiV72itc8Q" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a></li>
+                  <li class="facebook"><a href="https://www.facebook.com/tokenmint.io/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+          <div class="copyright">
+            <p>All copyrights reserved &copy; 2019 - Designed & Developed by <a rel="nofollow" href="https://uideck.com">UIdeck</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- Go To Top Link -->
+  <a href="web3-integration.html#" class="back-to-top">
+    <i class="lnr lnr-arrow-up"></i>
+  </a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="../js/jquery-min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.mixitup.js"></script>
+  <script src="../js/nivo-lightbox.js"></script>
+  <script src="../js/owl.carousel.js"></script>
+  <script src="../js/jquery.stellar.min.js"></script>
+  <script src="../js/jquery.nav.js"></script>
+  <script src="../js/scrolling-nav.js"></script>
+  <script src="../js/jquery.easing.min.js"></script>
+  <script src="../js/smoothscroll.js"></script>
+  <script src="../js/jquery.slicknav.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="../js/jquery.vide.js"></script>
+  <script src="../js/jquery.counterup.min.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/waypoints.min.js"></script>
+  <script src="../js/form-validator.min.js"></script>
+  <script src="../js/contact-form-script.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/datatables.min.js"></script>
+
+  <!-- collect data and update DataTable -->
+  <script>
+    $(document).ready(function() {
+
+      let corsProxy = "https://cors-anywhere.herokuapp.com/"
+      let btcusdPriceUrl = "http://157.230.101.185:3000/users/1/web_requests/9/btcusd-price-feed.json";
+      let exchangeVolumeFeed = "http://157.230.101.185:3000/users/1/web_requests/11/volume-feed.json";
+      let alexaFeed = "http://157.230.101.185:3000/users/1/web_requests/14/alexa-feed.json"
+
+      // get btcusd price
+      $.ajax({ url: corsProxy + btcusdPriceUrl, headers: { "x-requested-with": "xhr" } }).done(function(response1) {
+        let btcUsdPrice = response1.items[0].btcusd_price;
+
+        // get exchange trade volume
+        $.ajax({ url: corsProxy + exchangeVolumeFeed, headers: { "x-requested-with": "xhr" } }).done(function(response2) {
+
+          for (const item of response2.items) {
+            let id = item.name.toLowerCase().replace(".", "");
+            $("#volume-" + id).text("$" + (item.trade_volume_24h_btc * btcUsdPrice).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+          }
+
+          // get alexa rank
+          $.ajax({ url: corsProxy + alexaFeed, headers: { "x-requested-with": "xhr" } }).done(function(response3) {
+            for (const item of response3.items) {
+              $("#alexa-" + item.domain.replace(".", "")).text(item.alexa_rank);
+            }
+
+            // finally, create datatable from html table and sort by volume
+            let table = $('#datatable').DataTable( {
+              searching: false,
+              paging: false
+            });
+            table.order([4, 'desc']).draw();
+          });
+        });
+      });
+    } );
+  </script>
+
+</body>
+</html>

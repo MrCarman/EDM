@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12478530-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-12478530-2');
+
+    window['_fs_debug'] = false;
+    window['_fs_host'] = 'fullstory.com';
+    window['_fs_org'] = 'G18A4';
+    window['_fs_namespace'] = 'FS';
+    (function (m, n, e, t, l, o, g, y) {
+      if (e in m) { if (m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); } return; }
+      g = m[e] = function (a, b, s) { g.q ? g.q.push([a, b, s]) : g._api(a, b, s); }; g.q = [];
+      o = n.createElement(t); o.async = 1; o.src = 'https://' + _fs_host + '/s/fs.js';
+      y = n.getElementsByTagName(t)[0]; y.parentNode.insertBefore(o, y);
+      g.identify = function (i, v, s) { g(l, { uid: i }, s); if (v) g(l, v, s) }; g.setUserVars = function (v, s) { g(l, v, s) }; g.event = function (i, v, s) { g('event', { n: i, p: v }, s) };
+      g.shutdown = function () { g("rec", !1) }; g.restart = function () { g("rec", !0) };
+      g.consent = function (a) { g("consent", !arguments.length || a) };
+      g.identifyAccount = function (i, v) { o = 'account'; v = v || {}; v.acctId = i; g(o, v) };
+      g.clearUserCookie = function () { };
+    })(window, document, window['_fs_namespace'], 'script', 'user');
+  </script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="erc20, tokens, listing, metamask, ico, funds, etherscan">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="Merkle Blue">
+  <meta name="description"
+    content="A simple step-by-step guide will walk you through the process of minting new tokens using etherscan and MetaMask." />
+  <title>How to Mint New Tokens Using Etherscan</title>
+  <link rel="canonical" href="how-to-mint-new-tokens-using-etherscan.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How to Mint New Tokens Using Etherscan" />
+  <meta property="og:description"
+    content="A simple step-by-step guide will walk you through the process of minting new tokens using etherscan and MetaMask." />
+  <meta property="og:image" content="https://tokenmint.io/blog/img/etherscan-logo-big.png" />
+  <meta property="og:url" content="https://tokenmint.io/blog/how-to-mint-new-tokens-using-etherscan.html" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Mint New Tokens Using Etherscan" />
+  <meta name="twitter:description"
+    content="A simple step-by-step guide will walk you through the process of minting new tokens using etherscan and MetaMask." />
+  <meta name="twitter:image" content="https://tokenmint.io/blog/img/etherscan-logo-big.png" />
+  <meta name="twitter:url" content="https://tokenmint.io/blog/how-to-mint-new-tokens-using-etherscan.html" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/line-icons.css">
+  <link rel="stylesheet" href="../css/owl.carousel.css">
+  <link rel="stylesheet" href="../css/owl.theme.css">
+  <link rel="stylesheet" href="../css/nivo-lightbox.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/slicknav.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" href="../img/favicon.ico" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+    integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <!-- Header Section Start -->
+  <header id="hero-area" data-stellar-background-ratio="0.5">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><img class="img-fulid" src="../img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
+            aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lnr lnr-menu"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav mr-auto w-100 justify-content-end">
+            <li class="nav-item"><a class="nav-link page-scroll" href="../index.html#hero-area">Home</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="../create-erc20-token.html">Create Token</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="../create-ico.html">Create ICO</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="how-to-mint-new-tokens-using-etherscan.html#contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="index.html">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Start -->
+      <ul class="mobile-menu">
+        <li><a class="page-scroll" href="../index.html#hero-area">Home</a></li>
+        <li><a class="page-scroll" href="../create-erc20-token.html">Create Token</a></li>
+        <li><a class="page-scroll" href="../create-ico.html">Create ICO</a></li>
+        <li><a class="page-scroll" href="how-to-mint-new-tokens-using-etherscan.html#contact">Contact</a></li>
+        <li><a class="page-scroll" href="index.html">Blog</a></li>
+      </ul>
+      <!-- Mobile Menu End -->
+
+    </nav>
+    <!-- Navbar End -->
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <div class="contents text-center">
+            <h2 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">YiDaiBi Blog</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header Section End -->
+
+  <!-- Blog text Section -->
+  <section class="section">
+    <!-- Container Starts -->
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">How to Mint New Tokens Using Etherscan</h1>
+        <hr class="lines">
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-sm-12">
+          <div class="wow fadeInDown blog-text" data-wow-delay="0.2s">
+            <p>
+              <img src="img/etherscan-logo-big.png" alt="Etherscan" class="responsive-image">
+            </p>
+
+            <p>If you have created a <a target="_blank" rel="noopener" href="../app/index.html#/token">mintable
+                token</a> using YiDaiBi app, you have the option to create (mint) new tokens
+              that will be added to the total token supply and be allocated to the desired address. This article is a
+              simple, step-by-step, tutorial which will show you an easy way to do that - by using etherscan.</p>
+            <p>If you'd like to watch a video guide, you
+              can watch a short 3 minute video in a <a href="how-to-mint-new-tokens-using-etherscan.html#videowalkthrough">video walkthrough</a> section. If you
+              prefer going through step-by-step instructions where we explain every step on the way, keep on reading.
+            </p>
+
+            <h2>Prerequisites</h2>
+            <p>To finish this tutorial, make sure you have the following:</p>
+            <ul>
+              <li> - <a href="https://metamask.io" target="_blank" rel="noopener">Metamask browser extension</a>
+                installed and unlocked</li>
+              <li> - ETH funds in your wallet in the amount that is necessary to invoke a contract method</li>
+              <li> - The address of the mintable token contract</li>
+              <li> - The address with minter privileges</li>
+            </ul>
+
+            <h2 id="videowalkthrough">Video Walkhrough</h2>
+            <p>In this video, we will go through the process of:</p>
+            <ul>
+              <li> - Checking if you own the minter role (the privilege to mint new tokens)</li>
+              <li> - Minting new tokens using etherscan UI and MetaMask</li>
+              <li> - Transferring the minter role to another account</li>
+            </ul>
+            <br />
+            <div class="responsive-video">
+              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rsK70jXNX-s" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <p>For step-by-step instructions, read on.</p>
+
+            <h2>Checking if you own the minter role (the privilege to mint new tokens)</h2>
+            <o>A minter role exists to secure that only specified accounts have the right to mint new tokens. Here's how
+              you check if your account is one of them:</o>
+            <p><strong>Step 1</strong>. Navigate to <a href="https://etherscan.io/" target="_blank">Etherscan</a></p>
+            <p><strong>Step 2</strong>. Find your mintable token by entering the token address into search field. You'll
+              land on the
+              token contract page.</p>
+            <p><strong>Step 3</strong>. Click on the <i>Contract</i> tab.
+              You will notice 3 buttons:
+              <ul>
+                <li> - <strong>Code</strong> - contains the verified solidity code used for your token creation</li>
+                <li> - <strong>Read Contract</strong> - enables you to access read only methods of the token. No
+                  transaction fee payments are necessary for these operations as they only read the state of the
+                  blockchain</li>
+                <li> - <strong>Write Contract</strong> - enables you to invoke token methods that change the state of
+                  the blockchain, and hence transaction fee payment is required</li>
+              </ul>
+            </p>
+            <p><strong>Step 4</strong>. Click on the <i>Read Contract</i> button (as depicted on the image below).
+              <img src="img/etherscan-contract-read.png" alt="WriteContract" class="responsive-image">
+            </p>
+            <p><strong>Step 5</strong>. Find the <i>isMinter</i> method (as depicted on the image below).
+              <img src="img/etherscan-is-minter-method.png" alt="WriteContract" class="responsive-image">
+            </p>
+            <p><strong>Step 5</strong>. Enter the address that you want to check into the <i>account(address)</i> field,
+              and click on the <i>Query</i> button below.</p>
+            <p>The method will return true if the entered address has minting privilege, and false otherwise. In the
+              case of mintable tokens created by YiDaiBi app, <strong>the address that has the minter role is the
+                address used
+                to pay for token creation</strong>.</p>
+
+            <h2>Mint new tokens</h2>
+            <p><strong>Step 1</strong>. Click on the <i>Write Contract</i> button (as depicted on the image below).
+              <img src="img/etherscan-contract-write.png" alt="WriteContract" class="responsive-image">
+            </p>
+            <p><strong>Step 2</strong>. Click on the <i>Connect to Web3</i> link (top left corner of the Write Contract
+              tab).
+            </p>
+            <p><strong>Step 3</strong>. Confirm by clicking on <i>Connect</i> button on MetaMask popup window.</p>
+            <p><strong>Step 4</strong>. Make sure that in MetaMask you have selected the account that has minter role.
+            </p>
+            <p><strong>Step 5</strong>. Find the <i>mint</i> method (as depicted on the image below).
+              <img src="img/etherscan-mint-method.png" alt="WriteContract" class="responsive-image">
+            </p>
+            <p><strong>Step 6</strong>. In <i>to(address)</i> field, enter the address that will receive the newly
+              minted tokens.</p>
+            <p><strong>Step 7</strong>. In <i>value(uint256)</i> field, enter the amount of tokens that you wish to
+              mint.</p>
+            <p><strong>IMPORTANT:</strong> the <i>value(uint256)</i> field takes the smallest denomination of your token
+              as a parameter. For that reason if you want to mint N tokens, you will enter the N*decimals value. For
+              example, the default decimals value is 18, so if you would like to mint 100 tokens, you will enter
+              100000000000000000000 (100 * (10 to the 18th)).</p>
+            <p><strong>Step 8</strong>. Click on the the <i>Write</i> button below.
+            </p>
+            <p><strong>Step 9</strong>. Confirm the transaction in the MetaMask popup window.</p>
+            <p>After the transaction is mined, new tokens will be minted and allocated to the specified address.
+            </p>
+
+            <h2>Add/Transfer minter role</h2>
+            <p>You can follow the similar procedure as described above to add new address to the minter roles, or
+              replace the existing minter address with a new one (can be seen in the <a href="how-to-mint-new-tokens-using-etherscan.html#videowalkthrough">video
+                walkthrough</a> section).
+            </p>
+            <p>This is accomplished by invoking <i>addMinter</i> or <i>transferMinterRole</i> methods in <i>Write
+                Contract</i> tab.
+            </p>
+            <p>The Prerequisite for these operations is that you have an account with minter role selected in the
+              MetaMask.</p>
+
+            <h2>Create Your Own Mintable Token</h2>
+            <p>Create your own mintable token using <a href="../app/index.html#/token">YiDaiBi app</a>.</p>
+
+            <h2>Share This Post</h2>
+
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+              <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+              <a class="a2a_button_facebook"></a>
+              <a class="a2a_button_twitter"></a>
+              <a class="a2a_button_email"></a>
+              <a class="a2a_button_whatsapp"></a>
+              <a class="a2a_button_telegram"></a>
+              <a class="a2a_button_viber"></a>
+              <a class="a2a_button_wechat"></a>
+              <a class="a2a_button_facebook_messenger"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+
+            <h2>What's Next</h2>
+            <p>If you've completed this tutorial, we recommend you follow up with these blog posts:</p>
+
+            <h5><a href="mintable-erc20-token-explained.html">Mintable ERC-20 Token Explained</a></h5>
+            <h5><a href="how-to-reclaim-your-ico-investments-using-etherscan.html">How To Reclaim Your ICO Investments
+                Using Etherscan</a></h5>
+            <h5><a href="how-to-update-token-information-on-etherscan.html">How To Update Token Information On
+                Etherscan</a></h5>
+
+            <h2>Connect With Us</h2>
+            <p>Thank you for reading this far! You can: </br>
+              - follow us on <a href="https://twitter.com/tokenmint_io" target="_blank" rel="noopener">Twitter</a></br>
+              - subscribe to our channel on <a href="https://www.youtube.com/channel/UClRNqrEowqovrSiV72itc8Q"
+                target="_blank" rel="noopener">Youtube</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Container Ends -->
+  </section>
+  <!-- How It Work Section Ends -->
+
+  <!-- Contact Section Start -->
+  <section id="contact" class="section" data-stellar-background-ratio="-0.2">
+    <div class="contact-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="contact-us">
+              <h3>Contact us</h3>
+              <div class="contact-address">
+                <p>We are <a href="https://merkleblue.com">Merkle Blue</a> DOO, a blockchain startup.</p>
+                <p>Vardarska 1c/54, 21000 Novi Sad, Serbia </p>
+                <p class="phone">Phone: <span>(+381 64 321 2640)</span></p>
+                <p class="email">E-mail: <span>(merkleblue@gmail.com)</span></p>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li class="twitter"><a href="https://twitter.com/tokenmint_io" target="_blank" rel="noopener"><i
+                        class="fab fa-twitter"></i></a></li>
+                  <li class="youtube"><a href="https://www.youtube.com/channel/UClRNqrEowqovrSiV72itc8Q" target="_blank"
+                      rel="noopener"><i class="fab fa-youtube"></i></a></li>
+                      <li class="facebook"><a href="https://www.facebook.com/tokenmint.io/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+          <div class="copyright">
+            <p>All copyrights reserved &copy; 2019 - Designed & Developed by <a rel="nofollow"
+                href="https://uideck.com">UIdeck</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- Go To Top Link -->
+  <a href="how-to-mint-new-tokens-using-etherscan.html#" class="back-to-top">
+    <i class="lnr lnr-arrow-up"></i>
+  </a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="../js/jquery-min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.mixitup.js"></script>
+  <script src="../js/nivo-lightbox.js"></script>
+  <script src="../js/owl.carousel.js"></script>
+  <script src="../js/jquery.stellar.min.js"></script>
+  <script src="../js/jquery.nav.js"></script>
+  <script src="../js/scrolling-nav.js"></script>
+  <script src="../js/jquery.easing.min.js"></script>
+  <script src="../js/smoothscroll.js"></script>
+  <script src="../js/jquery.slicknav.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="../js/jquery.vide.js"></script>
+  <script src="../js/jquery.counterup.min.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/waypoints.min.js"></script>
+  <script src="../js/form-validator.min.js"></script>
+  <script src="../js/contact-form-script.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+
+</html>

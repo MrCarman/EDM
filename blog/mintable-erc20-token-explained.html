@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12478530-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-12478530-2');
+
+    window['_fs_debug'] = false;
+    window['_fs_host'] = 'fullstory.com';
+    window['_fs_org'] = 'G18A4';
+    window['_fs_namespace'] = 'FS';
+    (function (m, n, e, t, l, o, g, y) {
+      if (e in m) { if (m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); } return; }
+      g = m[e] = function (a, b, s) { g.q ? g.q.push([a, b, s]) : g._api(a, b, s); }; g.q = [];
+      o = n.createElement(t); o.async = 1; o.src = 'https://' + _fs_host + '/s/fs.js';
+      y = n.getElementsByTagName(t)[0]; y.parentNode.insertBefore(o, y);
+      g.identify = function (i, v, s) { g(l, { uid: i }, s); if (v) g(l, v, s) }; g.setUserVars = function (v, s) { g(l, v, s) }; g.event = function (i, v, s) { g('event', { n: i, p: v }, s) };
+      g.shutdown = function () { g("rec", !1) }; g.restart = function () { g("rec", !0) };
+      g.consent = function (a) { g("consent", !arguments.length || a) };
+      g.identifyAccount = function (i, v) { o = 'account'; v = v || {}; v.acctId = i; g(o, v) };
+      g.clearUserCookie = function () { };
+    })(window, document, window['_fs_namespace'], 'script', 'user');
+  </script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="erc20, tokens, mintable, mint, supply">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="YiDaiBi">
+  <meta name="description" content="What are mintable ERC20 tokens, how to mint new tokens, what is Minter role. Mintable token examples, and how to use mintable tokens in crowdsales." />
+  <title>Mintable ERC20 Token Explained - YiDaiBi</title>
+  <link rel="canonical" href="mintable-erc20-token-explained.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Mintable ERC20 Token Explained - YiDaiBi" />
+  <meta property="og:description" content="What are mintable ERC20 tokens, how to mint new tokens, what is Minter role. Mintable token examples, and how to use mintable tokens in crowdsales." />
+  <meta property="og:image" content="https://tokenmint.io/blog/img/mintable-erc20-token.png" />
+  <meta property="og:url" content="https://tokenmint.io/blog/mintable-erc20-token-explained.html" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mintable ERC20 Token Explained - YiDaiBi" />
+  <meta name="twitter:description" content="What are mintable ERC20 tokens, how to mint new tokens, what is Minter role. Mintable token examples, and how to use mintable tokens in crowdsales." />
+  <meta name="twitter:image" content="https://tokenmint.io/blog/img/mintable-erc20-token.png" />
+  <meta name="twitter:url" content="https://tokenmint.io/blog/mintable-erc20-token-explained.html" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/line-icons.css">
+  <link rel="stylesheet" href="../css/owl.carousel.css">
+  <link rel="stylesheet" href="../css/owl.theme.css">
+  <link rel="stylesheet" href="../css/nivo-lightbox.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/slicknav.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" href="../img/favicon.ico" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <!-- Header Section Start -->
+  <header id="hero-area" data-stellar-background-ratio="0.5">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><img class="img-fulid" src="../img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lnr lnr-menu"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav mr-auto w-100 justify-content-end">
+            <li class="nav-item"><a class="nav-link page-scroll" href="../index.html#hero-area">Home</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="../create-erc20-token.html">Create Token</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="../create-ico.html">Create ICO</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="mintable-erc20-token-explained.html#contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="index.html">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Start -->
+      <ul class="mobile-menu">
+        <li><a class="page-scroll" href="../index.html#hero-area">Home</a></li>
+        <li><a class="page-scroll" href="../create-erc20-token.html">Create Token</a></li>
+        <li><a class="page-scroll" href="../create-ico.html">Create ICO</a></li>
+        <li><a class="page-scroll" href="mintable-erc20-token-explained.html#contact">Contact</a></li>
+        <li><a class="page-scroll" href="index.html">Blog</a></li>
+      </ul>
+      <!-- Mobile Menu End -->
+
+    </nav>
+    <!-- Navbar End -->
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <div class="contents text-center">
+            <h2 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">YiDaiBi Blog</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header Section End -->
+
+  <!-- Blog text Section -->
+  <section class="section">
+    <!-- Container Starts -->
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Mintable ERC20 Token Explained</h1>
+        <hr class="lines">
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-sm-12">
+          <div class="wow fadeInDown blog-text" data-wow-delay="0.2s">
+            <p>
+              <img src="img/mintable-erc20-token.png" alt="Mintable ERC20 Token" class="responsive-image">
+            </p>
+
+            <p>This short tutorial will explain what mintable ERC20 tokens are,
+              what is the difference between minting and mining, what is Minter role and how to add, remove and transfer it.
+              You'll find out what are some successful mintable ERC20 token projects, and how mintable tokens are used in crowdsales. </p>
+            <p>Mintable tokens can be created using our <a href="../app/index.html#/token">ERC20 token generator</a> tool. If you want to learn
+            about Ethereum tokens, we recommend you create one, and try it out. It's free when you are using Ropsten testnet. Take a
+            look at <a href="../create-erc20-token.html">create tokens page</a> to learn how to create one. </p>
+            <p>In this tutorial, we are going to talk about <a href="https://openzeppelin.org/" target="_blank" rel="noopener">OpenZeppelin's</a> implementation of
+              Mintable token which is battle-tested framework and used by our token generator. </p>
+
+            <h2 id="mintabletokens">What Are Mintable Tokens?</h2>
+            <p>Mintable tokens are <a href="erc-20-tokens-and-how-to-create-yours.html">ERC20-compatible tokens</a> with one added
+              feature: new tokens can be created at any time and added to total supply. Standard ERC20 tokens don't have this feature,
+              which makes them a fixed supply tokens. </p>
+              <p><strong>Mint</strong> function is defined like this in Solidity:</br>
+              <code>function mint(address to, uint256 value) public onlyMinter returns (bool)</code></br>
+              New tokens can be minted only by an address which is set to be in a Minter role. If no address is in Minter role, then
+            no one can create new tokens.</p>
+
+            <h2 id="minterrole">Minter Role</h2>
+            <p>Minter role is an address that has a special privilege to create new tokens, thus adding them to total supply. There could be
+              multiple Minter role addresses, but in practice, it's usually just one address. The first Minter is the address that deployed
+              the token contract. Current minter can add new minter, renonunce his privilege to be minter, or transfer his right to other address.</p>
+
+            <h3>Adding New Minter</h3>
+            <p>When a Minter wants to add another Minter, he can call the following function:</br>
+            <code>function addMinter(address account) public onlyMinter</code></br>
+            We can see that by using function modifier <i>onlyMinter</i> only current Minter can add a new Minter. Calling <i>addMinter</i>
+            function emits the following event:</br>
+            <code>event MinterAdded(address indexed account)</code>
+            </p>
+
+            <h3>Renouncing Minter Role</h3>
+            <p>Current Minter can renounce his privilege by calling the following function:</br>
+            <code>function renounceMinter() public</code></br>
+            Only address that is Minter can renounce itself from Minter role, no one else. Calling <i>renounceMinter</i>
+            function emits the following event:</br>
+            <code>event MinterRemoved(address indexed account)</code>
+            </p>
+
+            <h3>Transfering Minter Role</h3>
+            <p>Current Minter can transfer his privilege by calling the following function:</br>
+            <code>function transferMinterRole(address newMinter) public</code></br>
+            Function <i>transferMinterRole</i> adds new minter and renounces Minter role privilege in one transaction. It emits
+            both <i>MinterAdded</i> and <i>MinterRemoved</i> events.
+            </p>
+
+            <h2>Minting vs Mining</h2>
+            <p>Minting is not the same as mining. This is a common misunderstanding when people are talking about cryptocurrencies.</p>
+            <p><b>Minting</b> tokens is done by sending a transaction that creates new tokens inside of token smart contract. As we have seen in
+              <a href="mintable-erc20-token-explained.html#mintabletokens">What are mintable tokens</a>, a call to a smart contract function can create unlimited number of
+              tokens, without spending energy. </p>
+
+            <p>On the other hand, mining does create new tokens, but is usually limited as per concensus
+            rules of that blockchain, and requires spending energy. Mining also serves other purposes like securing the network and packing
+            new transactions into blocks. </p>
+
+            <h2>Mintable Token Examples</h2>
+            <p>There are plenty of mintable ERC20 tokens out there. Here are some of the more interesting tokens. </p>
+
+            <h4>Dai (DAI)</h4>
+            <p>DAI is decentralized stablecoin pegged to $1 USD used in the <a href="https://makerdao.com/en/" target="_blank" rel="noopener">MakerDAO</a>
+              system. Users can lock their crypto assets (ETH) inside of MakerDAO contract, and in return get DAI tokens. Everytime ETH
+              is locked in CDP (Collateralized Debt Position), new DAI tokens are minted by the MakerDAO contract. </p>
+
+            <h4>Status (SNT)</h4>
+            <p>Status is an open-source platform which uses it's native SNT token as a mechanism for governance of the
+              <a href="https://status.im/" target="_blank" rel="noopener">Status client</a>,
+              as a utility token to drive push notifications in their messaging app, as well as for curation of user-generated content on
+              their network. The SNT token has a cap on total supply, but a lower current circulating supply. New tokens can be minted by
+              the controler address. </p>
+
+            <h4>Decentraland (MANA)</h4>
+            <p><a href="https://decentraland.org/" target="_blank" rel="noopener">Decentraland</a> is a virtual world platform owned by its users.
+              Users create goods and services and trade them using MANA tokens. MANA tokens are mintable and burnable ERC20 tokens.</p>
+
+            <h2>Mintable Tokens in Crowdsales</h2>
+
+            <p>Mintable tokens are widely used in combination with crowdsales. Crowdsale contracts are used to <a href="../create-ico.html">create an ICO</a> where
+              ERC20 tokens are sold for ETH. Here's the mechanism used for combining mintable tokens with crowdsale:
+              <ol>
+                <li>ICO maker deploys mintable token contract, giving him a Minter role</li>
+                <li>ICO maker deploys crowdsale contract</li>
+                <li>ICO maker transfers Minter role to crowdsale contract. Only crowdsale contract can mint new tokens. </li>
+              </ol>
+              Now, the crowdsale begins. Investor comes along and wants to invest in new tokens. He sends ETH to crowdsale contract, contract
+              mints brand new ERC20 tokens at current price and sends them to investor. When crowdsale is finished, no one can mint more
+              ERC20 tokens, not even crowdsale contract, since it's coded that way. Investors can be sure that no one can dilute their share of token holdings.
+            </p>
+
+            <h2>Share This Post</h2>
+
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_email"></a>
+            <a class="a2a_button_whatsapp"></a>
+            <a class="a2a_button_telegram"></a>
+            <a class="a2a_button_viber"></a>
+            <a class="a2a_button_wechat"></a>
+            <a class="a2a_button_facebook_messenger"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+
+            <h2>What's Next</h2>
+            <p>If you've completed this tutorial, we recommend you follow up with these tutorials:</p>
+
+            <h5><a href="erc-20-tokens-and-how-to-create-yours.html">Fixed Supply ERC20 Tokens Explained</a></h5>
+            <h5><a href="web-3-enabled-ethereum-wallets-and-browsers.html">Ethereum Wallets For Mintable ERC20 Tokens</a></li></h5>
+            <h5><a href="how-to-add-your-custom-erc-token-to-metamask.html">How to Add Mintable Token to Metamask Wallet</a></h5>
+
+            <h2>Connect With Us</h2>
+            <p>Thank you for reading this far! You can: </br>
+              - follow us on <a href="https://twitter.com/tokenmint_io" target="_blank" rel="noopener">Twitter</a></br>
+              - subscribe to our channel on <a href="https://www.youtube.com/channel/UClRNqrEowqovrSiV72itc8Q" target="_blank" rel="noopener">Youtube</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Container Ends -->
+  </section>
+  <!-- How It Work Section Ends -->
+
+  <!-- Contact Section Start -->
+  <section id="contact" class="section" data-stellar-background-ratio="-0.2">
+    <div class="contact-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="contact-us">
+              <h3>Contact us</h3>
+              <div class="contact-address">
+                <p>We are <a href="https://merkleblue.com">YiDaiBi</a> DOO, a blockchain startup.</p>
+                <p>Vardarska 1c/54, 21000 Novi Sad, Serbia </p>
+                <p class="phone">Phone: <span>(+381 64 321 2640)</span></p>
+                <p class="email">E-mail: <span>(yidaibi@zhenailian.com)</span></p>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li class="twitter"><a href="https://twitter.com/tokenmint_io" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+                  <li class="youtube"><a href="https://www.youtube.com/channel/UClRNqrEowqovrSiV72itc8Q" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a></li>
+                  <li class="reddit"><a href="https://www.reddit.com/r/tokenmint" target="_blank" rel="noopener"><i class="fab fa-reddit"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+          <div class="copyright">
+            <p>All copyrights reserved &copy; 2019 - Designed & Developed by <a rel="nofollow" href="https://uideck.com">UIdeck</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- Go To Top Link -->
+  <a href="mintable-erc20-token-explained.html#" class="back-to-top">
+    <i class="lnr lnr-arrow-up"></i>
+  </a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="../js/jquery-min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.mixitup.js"></script>
+  <script src="../js/nivo-lightbox.js"></script>
+  <script src="../js/owl.carousel.js"></script>
+  <script src="../js/jquery.stellar.min.js"></script>
+  <script src="../js/jquery.nav.js"></script>
+  <script src="../js/scrolling-nav.js"></script>
+  <script src="../js/jquery.easing.min.js"></script>
+  <script src="../js/smoothscroll.js"></script>
+  <script src="../js/jquery.slicknav.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="../js/jquery.vide.js"></script>
+  <script src="../js/jquery.counterup.min.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/waypoints.min.js"></script>
+  <script src="../js/form-validator.min.js"></script>
+  <script src="../js/contact-form-script.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+
+</html>

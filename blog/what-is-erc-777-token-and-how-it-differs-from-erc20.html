@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12478530-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-12478530-2');
+
+    window['_fs_debug'] = false;
+    window['_fs_host'] = 'fullstory.com';
+    window['_fs_org'] = 'G18A4';
+    window['_fs_namespace'] = 'FS';
+    (function (m, n, e, t, l, o, g, y) {
+      if (e in m) { if (m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); } return; }
+      g = m[e] = function (a, b, s) { g.q ? g.q.push([a, b, s]) : g._api(a, b, s); }; g.q = [];
+      o = n.createElement(t); o.async = 1; o.src = 'https://' + _fs_host + '/s/fs.js';
+      y = n.getElementsByTagName(t)[0]; y.parentNode.insertBefore(o, y);
+      g.identify = function (i, v, s) { g(l, { uid: i }, s); if (v) g(l, v, s) }; g.setUserVars = function (v, s) { g(l, v, s) }; g.event = function (i, v, s) { g('event', { n: i, p: v }, s) };
+      g.shutdown = function () { g("rec", !1) }; g.restart = function () { g("rec", !0) };
+      g.consent = function (a) { g("consent", !arguments.length || a) };
+      g.identifyAccount = function (i, v) { o = 'account'; v = v || {}; v.acctId = i; g(o, v) };
+      g.clearUserCookie = function () { };
+    })(window, document, window['_fs_namespace'], 'script', 'user');
+  </script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="erc777, erc-777, erc20, tokens, listing, metamask, ico, funds, etherscan">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="Merkle Blue">
+  <meta name="description" content="Introduction to ERC777 tokens, and how it differs from the ERC20 standard." />
+  <title>What is ERC777 Token, And How It Differs From ERC20</title>
+  <link rel="canonical" href="what-is-erc-777-token-and-how-it-differs-from-erc20.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="What is ERC777 Token, And How It Differs From ERC20" />
+  <meta property="og:description"
+    content="Introduction to ERC777 tokens, and how it differs from the ERC20 standard." />
+  <meta property="og:image" content="https://tokenmint.io/blog/img/erc777.png" />
+  <meta property="og:url"
+    content="https://tokenmint.io/blog/what-is-erc-777-token-and-how-it-differs-from-erc20.html" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What is ERC777 Token, And How It Differs From ERC20" />
+  <meta name="twitter:description"
+    content="Introduction to ERC777 tokens, and how it differs from the ERC20 standard." />
+  <meta name="twitter:image" content="https://tokenmint.io/blog/img/erc777.png" />
+  <meta name="twitter:url"
+    content="https://tokenmint.io/blog/what-is-erc-777-token-and-how-it-differs-from-erc20.html" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/line-icons.css">
+  <link rel="stylesheet" href="../css/owl.carousel.css">
+  <link rel="stylesheet" href="../css/owl.theme.css">
+  <link rel="stylesheet" href="../css/nivo-lightbox.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/slicknav.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" href="../img/favicon.ico" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <!-- Header Section Start -->
+  <header id="hero-area" data-stellar-background-ratio="0.5">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><img class="img-fulid" src="../img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lnr lnr-menu"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav mr-auto w-100 justify-content-end">
+            <li class="nav-item"><a class="nav-link page-scroll" href="../index.html#hero-area">Home</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="../create-erc20-token.html">Create Token</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="../create-ico.html">Create ICO</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="what-is-erc-777-token-and-how-it-differs-from-erc20.html#contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="index.html">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Start -->
+      <ul class="mobile-menu">
+        <li><a class="page-scroll" href="../index.html#hero-area">Home</a></li>
+        <li><a class="page-scroll" href="../create-erc20-token.html">Create Token</a></li>
+        <li><a class="page-scroll" href="../create-ico.html">Create ICO</a></li>
+        <li><a class="page-scroll" href="what-is-erc-777-token-and-how-it-differs-from-erc20.html#contact">Contact</a></li>
+        <li><a class="page-scroll" href="index.html">Blog</a></li>
+      </ul>
+      <!-- Mobile Menu End -->
+
+    </nav>
+    <!-- Navbar End -->
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <div class="contents text-center">
+            <h2 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">YiDaiBi Blog</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header Section End -->
+
+  <!-- Blog text Section -->
+  <section class="section">
+    <!-- Container Starts -->
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">What is ERC777 Token, And How It Differs From ERC20</h1>
+        <hr class="lines">
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-sm-12">
+          <div class="wow fadeInDown blog-text" data-wow-delay="0.2s">
+            <p>
+              <img src="img/erc777.png" alt="erc777" class="responsive-image">
+            </p>
+            <h2>Introduction to ERC777 Tokens</h2>
+            <p>Unlike ERC20, a standard that is widely adopted in Ethereum ecosystem, ERC777 is often referred to
+              as a new kid in town. A kid with a huge potential. Some will even claim that ERC777 is the
+              valid successor of ERC20 standard. ERC777 standard specification is described in
+              <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-777.md" target="_blank" rel="noopener">EIP777 (Ethereum Improvement Proposal)</a>
+              document.
+            </p>
+            <p>In this blog post we will explore if these bold claims are justified, and give an in-depth overview on
+              ERC777 advantages (as well as some disadvantages), in comparison to ERC20 standard.</p>
+
+            <h2>What ERC20 problems does ERC777 solve?</h2>
+            <p>Say that you want to allow a third-party account (or contract) to spend your tokens. The most
+              common use case for this scenario is when you use Crypto exchange services.
+            </p>
+            <p>Fist step in this process is that you need to approve the spender account and set the limit of
+              your funds that they are authorized to spend, by calling the <code>approve</code> method on ERC20
+              smart contract. Apart from trusting the third-party with your funds, you also need to make sure
+              that the spending limit is always sufficient for the required transactions.
+            </p>
+            <h3>ERC777 Operators</h3>
+            <p>ERC777 standard mitigates the above described problem by introducing the concept of operators. As usual, operators
+              are certain accounts that have permissions to execute specific tasks. In case of ERC777 there are two categories of
+              operators:
+              <ol>
+                <li>default Operators</li>
+                <li>regular Operators</li>
+              </ol>
+              A regular operator is an address that is allowed to send and burn tokens on behalf of another address.
+              A default operator is an address that is allowed to send and burn tokens on behalf of all the token holders.
+            </p>
+            <p>Any ERC777 token holder address is allowed to authorize a regular Operator for its address, by invoking the
+              <code>authorizeOperator</code> method. Analog to this, any ERC777 token holder is able to revoke the operator
+              for its address (<strong>including the default operator</strong>), by invoking the <code>revokeOperator</code>
+              method.
+            </p>
+            <p>In YiDaiBi ERC777 implementation, <strong>the default operator is the address used for token deployment.</strong>
+            </p>
+            <p>Another small (and less obvious) benefit of utilizing the operators feature is the fact that user is no longer required
+              to worry about transaction fees and gas price. This can now be delegated to the operators.
+            </p>
+            <h3>ERC777 Hooks - an additional layer of security</h3>
+            <p>ERC777 Hooks are peaces of code that are tied (hooked) to sender and receiver accounts. Essentially, they are
+              smart contracts that implement:
+            <ol>
+              <li>
+                <strong>IERC777Sender</strong> interface with its one function <code>tokensToSend</code>
+              </li>
+              <li>
+                <strong>IERC777Recipient</strong> interface with its one function <code>tokensReceived</code>
+              </li>
+            </ol>
+            </p>
+            <p>Addresses of smart contracts that implement these two interfaces are stored in
+              <a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1820.md" target="_blank" rel="noopener">ERC1820 registry</a>, paired up with
+              the addresses that they are "hooked" to.
+            </p>
+            <p>If the sender address has a matching <code>IERC777Sender</code> implementation in the registry, its <code>tokensToSend</code> function will be
+              called before performing the transaction. If no matching implementation is found, transfer will proceed as usual.
+            </p>
+            <p>If the recipient address has a matching <code>IERC777Recipient</code> implementation in the registry, its <code>tokensReceived</code> function will be
+              called after performing the transaction. If the recipient address is a regular user address and no matching implementation is
+              found, transfer will proceed as usual. However, if the recipient address is a contract address, and no matching implementation is
+              found, the transfer transaction <strong>will be reverted</strong>.
+            </p>
+            <p>
+              On the diagram below, you can see the flow of a "hooked" transfer call.
+            </p>
+            <p>
+              <img src="img/ERC777-hooks.png" alt="erc777 hooks" class="responsive-image">
+            </p>
+            <p>So, the introduction of hooks allows us to enhance the transfer functionality of the ERC777 token, even after the token itself had been deployed.
+              It also offers a possibility to revert the function call, given that certain conditions necessary for execution aren't met.
+            </p>
+            <h2>ERC777 Drawbacks</h2>
+            <p>The advanced ERC777 functionality does come with some minor drawbacks:
+              <ol>
+                <li>
+                  The transfer transaction fee is a bit higher due to the fact that it uses hooks
+                </li>
+                <li>
+                  Token handling requires more responsibility, since you have to trust the operators that you choose
+                </li>
+              </ol>
+            </p>
+            <h2>How to Create Your Own ERC777 Token - A Video Tutorial</h2>
+            <p>The video below is a step-by-step tutorial on how to create your own ERC777 tokens using the YiDaiBi application:</p>
+            <div class="responsive-video">
+              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/oBA8K_8vBWc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p>Create your own ERC777 token with YiDaiBi!</p>
+            <h4><a href="../app/index.html#/token">ERC777 Token Generation Tool</a></h4>
+
+            <h2>Share This Post</h2>
+
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_email"></a>
+            <a class="a2a_button_whatsapp"></a>
+            <a class="a2a_button_telegram"></a>
+            <a class="a2a_button_viber"></a>
+            <a class="a2a_button_wechat"></a>
+            <a class="a2a_button_facebook_messenger"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+
+            <h2>What's Next</h2>
+            <p>If you've completed this tutorial, we recommend you follow up with these tutorials:</p>
+
+            <h5><a href="how-to-list-your-custom-erc20-token-to-etherdelta.html">List Your ERC20 Token To Etherdelta Exchange</a></h5>
+            <h5><a href="how-to-list-your-custom-erc20-token-to-uniswap.html">List Your ERC20 Token To Uniswap Exchange</a></h5>
+            <h5><a href="how-to-update-token-information-on-etherscan.html">Update Token Information on Etherscan</a></li></h5>
+
+            <h2>Connect With Us</h2>
+            <p>Thank you for reading this far! You can: </br>
+              - follow us on <a href="https://twitter.com/tokenmint_io" target="_blank" rel="noopener">Twitter</a></br>
+              - subscribe to our channel on <a href="https://www.youtube.com/channel/UClRNqrEowqovrSiV72itc8Q" target="_blank" rel="noopener">Youtube</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Container Ends -->
+  </section>
+  <!-- How It Work Section Ends -->
+
+  <!-- Contact Section Start -->
+  <section id="contact" class="section" data-stellar-background-ratio="-0.2">
+    <div class="contact-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="contact-us">
+              <h3>Contact us</h3>
+              <div class="contact-address">
+                <p>We are <a href="https://merkleblue.com">Merkle Blue</a> DOO, a blockchain startup.</p>
+                <p>Vardarska 1c/54, 21000 Novi Sad, Serbia </p>
+                <p class="phone">Phone: <span>(+381 64 321 2640)</span></p>
+                <p class="email">E-mail: <span>(yidaibi@zhenailian.com)</span></p>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li class="twitter"><a href="https://twitter.com/tokenmint_io" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a></li>
+                  <li class="youtube"><a href="https://www.youtube.com/channel/UClRNqrEowqovrSiV72itc8Q" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a></li>
+                  <li class="facebook"><a href="https://www.facebook.com/tokenmint.io/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+          <div class="copyright">
+            <p>All copyrights reserved &copy; 2019 - Designed & Developed by <a rel="nofollow" href="https://uideck.com">UIdeck</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- Go To Top Link -->
+  <a href="what-is-erc-777-token-and-how-it-differs-from-erc20.html#" class="back-to-top">
+    <i class="lnr lnr-arrow-up"></i>
+  </a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="../js/jquery-min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.mixitup.js"></script>
+  <script src="../js/nivo-lightbox.js"></script>
+  <script src="../js/owl.carousel.js"></script>
+  <script src="../js/jquery.stellar.min.js"></script>
+  <script src="../js/jquery.nav.js"></script>
+  <script src="../js/scrolling-nav.js"></script>
+  <script src="../js/jquery.easing.min.js"></script>
+  <script src="../js/smoothscroll.js"></script>
+  <script src="../js/jquery.slicknav.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="../js/jquery.vide.js"></script>
+  <script src="../js/jquery.counterup.min.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/waypoints.min.js"></script>
+  <script src="../js/form-validator.min.js"></script>
+  <script src="../js/contact-form-script.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+
+</html>

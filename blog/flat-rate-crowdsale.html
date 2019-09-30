@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12478530-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-12478530-2');
+
+    window['_fs_debug'] = false;
+    window['_fs_host'] = 'fullstory.com';
+    window['_fs_org'] = 'G18A4';
+    window['_fs_namespace'] = 'FS';
+    (function (m, n, e, t, l, o, g, y) {
+      if (e in m) { if (m.console && m.console.log) { m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].'); } return; }
+      g = m[e] = function (a, b, s) { g.q ? g.q.push([a, b, s]) : g._api(a, b, s); }; g.q = [];
+      o = n.createElement(t); o.async = 1; o.src = 'https://' + _fs_host + '/s/fs.js';
+      y = n.getElementsByTagName(t)[0]; y.parentNode.insertBefore(o, y);
+      g.identify = function (i, v, s) { g(l, { uid: i }, s); if (v) g(l, v, s) }; g.setUserVars = function (v, s) { g(l, v, s) }; g.event = function (i, v, s) { g('event', { n: i, p: v }, s) };
+      g.shutdown = function () { g("rec", !1) }; g.restart = function () { g("rec", !0) };
+      g.consent = function (a) { g("consent", !arguments.length || a) };
+      g.identifyAccount = function (i, v) { o = 'account'; v = v || {}; v.acctId = i; g(o, v) };
+      g.clearUserCookie = function () { };
+    })(window, document, window['_fs_namespace'], 'script', 'user');
+  </script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="erc20, tokens, listing, metamask, uniswap, exchange">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="author" content="YiDaiBi">
+  <meta name="description"
+    content="This tutorial will explain what Flat rate crowdsale is, what are Capped, Minted, Refundable, and Post-delivery crowdsales and how to create your own Flat rate crowdsale. " />
+  <title>Flat Rate Crowdsale Explained - YiDaiBi</title>
+  <link rel="canonical" href="flat-rate-crowdsale.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Flat Rate Crowdsale Explained - YiDaiBi" />
+  <meta property="og:description"
+    content="This tutorial will explain what Flat rate crowdsale is, what are Capped, Minted, Refundable, and Post-delivery crowdsales and how to create your own Flat rate crowdsale. " />
+  <meta property="og:image" content="https://tokenmint.io/blog/img/CMRPD.png" />
+  <meta property="og:url" content="https://tokenmint.io/blog/flat-rate-crowdsale.html" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Flat Rate Crowdsale Explained - YiDaiBi" />
+  <meta name="twitter:description"
+    content="This tutorial will explain what Flat rate crowdsale is, what are Capped, Minted, Refundable, and Post-delivery crowdsales and how to create your own Flat rate crowdsale. " />
+  <meta name="twitter:image" content="https://tokenmint.io/blog/img/CMRPD.png" />
+  <meta name="twitter:url" content="https://tokenmint.io/blog/flat-rate-crowdsale.html" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/line-icons.css">
+  <link rel="stylesheet" href="../css/owl.carousel.css">
+  <link rel="stylesheet" href="../css/owl.theme.css">
+  <link rel="stylesheet" href="../css/nivo-lightbox.css">
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+  <link rel="stylesheet" href="../css/slicknav.css">
+  <link rel="stylesheet" href="../css/animate.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="icon" href="../img/favicon.ico" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css"
+    integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+  <!-- Header Section Start -->
+  <header id="hero-area" data-stellar-background-ratio="0.5">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><img class="img-fulid" src="../img/logo.png" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
+            aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lnr lnr-menu"></i>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav mr-auto w-100 justify-content-end">
+            <li class="nav-item"><a class="nav-link page-scroll" href="../index.html#hero-area">Home</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="../create-erc20-token.html">Create Token</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="../create-ico.html">Create ICO</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="flat-rate-crowdsale.html#contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link page-scroll" href="index.html">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Start -->
+      <ul class="mobile-menu">
+        <li><a class="page-scroll" href="../index.html#hero-area">Home</a></li>
+        <li><a class="page-scroll" href="../create-erc20-token.html">Create Token</a></li>
+        <li><a class="page-scroll" href="../create-ico.html">Create ICO</a></li>
+        <li><a class="page-scroll" href="flat-rate-crowdsale.html#contact">Contact</a></li>
+        <li><a class="page-scroll" href="index.html">Blog</a></li>
+      </ul>
+      <!-- Mobile Menu End -->
+
+    </nav>
+    <!-- Navbar End -->
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-10">
+          <div class="contents text-center">
+            <h2 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">YiDaiBi Blog</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header Section End -->
+
+  <!-- Blog text Section -->
+  <section class="section">
+    <!-- Container Starts -->
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Flat Rate Crowdsale Explained</h1>
+        <hr class="lines">
+      </div>
+      <div class="row">
+        <div class="col-md-10 col-sm-12">
+          <div class="wow fadeInDown blog-text" data-wow-delay="0.2s">
+            <p>
+              So, you've reached this panel of our application, and are not sure about what the Flat
+              Rate Crowdsale is. Worry not.
+              <img src="img/CMRPD.png" alt="CMRPD crowdsale" class="responsive-image">
+            </p>
+            <p>The purpose of this article is to educate the reader on various aspects of crowdsales, as well as to help
+              him decide if this particular type of crowdsale is a right fit for him. The best approach for this is to
+              dive into each particular property that this type of crowdsale has to offer. So without further ado...</p>
+
+            <h2>Flat Rate Crowdsale</h2>
+            <p><strong>Crowdsale rate</strong> is tightly coupled with the price at which the tokens are being sold. The
+              rate dictates the number of tokens sold for one Ethereum. So, for example, if you set the rate to be 10, the
+              price of your token will effectively be 0.1 ETH. As the name suggests, in <strong>flat rate
+                crowdsales</strong>, the price of the token is immutable during the crowdsale life span.</p>
+
+            <h2>Capped Crowdsale</h2>
+            <p><strong>Crowdsale cap</strong> or hard cap (as referred to in some cases) represents the threshold in
+              Ethereum raised, which, when reached, effectively renders the crowdsale successful and ends it.</p>
+            <p>Not to be confused with the <strong>crowdsale goal</strong> or soft cap (as referred to in some cases).
+              If the crowdsale goal is reached by the end of the crowdsale, it will be considered successful, but unlike
+              the cap, reaching the crowdsale goal during its life span will not stop the crowdsale.
+            </p>
+            <p>Crowdsale cap must be higher or equal to crowdsale goal.
+            </p>
+
+            <h2>Minted Crowdsale</h2>
+            <p><strong>Minted crowdsale</strong> implies that the tokens are not pre-created. As the name suggests, they
+              are being minted
+              by each individual purchase. The <i>institution</i> allowed to mint tokens is the one that has been granted
+              a MinterRole. Specifically, with YiDaiBi crowdsales, the only party that is allowed to mint coins is the
+              crowdsale contract itself. In case of the successful crowdsale, the total amount of tokens released will
+              equal to the amount of tokens sold.</p>
+
+            <h2>Refundable Crowdsale</h2>
+            <p>Refundable feature is an industry standard introduced to protect the investors in case of a failed
+              crowdsale. After the crowdsale has ended, it allows the investors to retrieve their Ether by invoking the
+              crowdsale contracts <code>claimRefund</code> method.</p>
+            <p><strong>IMPORTANT:</strong> it is investors responsibility to claim their Ether back, after the failed
+              crowdsale.</p>
+
+            <h2>Post-Delivery Crowdsale</h2>
+            <p>In addition to aforementioned properties, YiDaiBi crowdsales have a <strong>post-delivery</strong>
+              feature. What this means is that the funds are frozen during the crowdsale lifespan. The total supply of the
+              tokens will be 0 until the crowdsale has finished. After the crowdsale has
+              finished (regardless of its success) it is necessary to call its <code>finalize</code> method. Anyone can
+              call this method, but it will only execute if the crowdsale has ended. Crowdsale creator can execute
+              finalization from YiDaiBi ICO dashboard.</p>
+            <p>Once finalized, in case of success, the investors should claim their purchased tokens by invoking
+              <code>withdrawTokens</code> method of the crowdsale contract. Should the crowdsale fail, as already
+              explained, the investors should call the <code>claimRefund</code> method. Either way, it is investors
+              responsibility to claim their funds upon crowdsale end.</p>
+
+            <h2>How To Create a Flat Rate Crowdsale Using YiDaiBi - Demo</h2>
+            <div class="responsive-video">
+              <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Ta68Mij72xc" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+          <h2>Create Your Own Flat Rate Crowdsale</h2>
+          <p>Create your own Flat Rate crowdsale using <a href="../app/index.html#/ico">YiDaiBi app</a>.</p>
+
+            <h2>Share This Post</h2>
+
+            <!-- AddToAny BEGIN -->
+            <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_email"></a>
+            <a class="a2a_button_whatsapp"></a>
+            <a class="a2a_button_telegram"></a>
+            <a class="a2a_button_viber"></a>
+            <a class="a2a_button_wechat"></a>
+            <a class="a2a_button_facebook_messenger"></a>
+            </div>
+            <script async src="https://static.addtoany.com/menu/page.js"></script>
+            <!-- AddToAny END -->
+
+            <h2>What's Next</h2>
+            <p>If you've completed this tutorial, we recommend you follow up with these tutorials:</p>
+
+            <h5><a href="increasing-price-crowdsale.html">Increasing Price Crowdsale Explained</a></h5>
+
+            <h2>Connect With Us</h2>
+            <p>Thank you for reading this far! You can: </br>
+              - follow us on <a href="https://twitter.com/tokenmint_io" target="_blank" rel="noopener">Twitter</a></br>
+              - subscribe to our channel on <a href="https://www.youtube.com/channel/UClRNqrEowqovrSiV72itc8Q"
+                target="_blank" rel="noopener">Youtube</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Container Ends -->
+  </section>
+  <!-- How It Work Section Ends -->
+
+  <!-- Contact Section Start -->
+  <section id="contact" class="section" data-stellar-background-ratio="-0.2">
+    <div class="contact-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-sm-6 col-xs-12">
+            <div class="contact-us">
+              <h3>Contact us</h3>
+              <div class="contact-address">
+                <p>We are <a href="https://merkleblue.com">YiDaiBi</a> DOO, a blockchain startup.</p>
+                <p>Vardarska 1c/54, 21000 Novi Sad, Serbia </p>
+                <p class="phone">Phone: <span>(+381 64 321 2640)</span></p>
+                <p class="email">E-mail: <span>(yidaibi@zhenailian.com)</span></p>
+              </div>
+              <div class="social-icons">
+                <ul>
+                  <li class="twitter"><a href="https://twitter.com/tokenmint_io" target="_blank" rel="noopener"><i
+                        class="fab fa-twitter"></i></a></li>
+                  <li class="youtube"><a href="https://www.youtube.com/channel/UClRNqrEowqovrSiV72itc8Q" target="_blank"
+                      rel="noopener"><i class="fab fa-youtube"></i></a></li>
+                      <li class="reddit"><a href="https://www.reddit.com/r/tokenmint" target="_blank" rel="noopener"><i class="fab fa-reddit"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+
+  <!-- Footer Section Start -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xs-12">
+          <div class="copyright">
+            <p>All copyrights reserved &copy; 2019 - Designed & Developed by <a rel="nofollow"
+                href="https://uideck.com">UIdeck</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+  <!-- Go To Top Link -->
+  <a href="flat-rate-crowdsale.html#" class="back-to-top">
+    <i class="lnr lnr-arrow-up"></i>
+  </a>
+
+  <div id="loader">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>
+
+  <!-- jQuery first, then Tether, then Bootstrap JS. -->
+  <script src="../js/jquery-min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/jquery.mixitup.js"></script>
+  <script src="../js/nivo-lightbox.js"></script>
+  <script src="../js/owl.carousel.js"></script>
+  <script src="../js/jquery.stellar.min.js"></script>
+  <script src="../js/jquery.nav.js"></script>
+  <script src="../js/scrolling-nav.js"></script>
+  <script src="../js/jquery.easing.min.js"></script>
+  <script src="../js/smoothscroll.js"></script>
+  <script src="../js/jquery.slicknav.js"></script>
+  <script src="../js/wow.js"></script>
+  <script src="../js/jquery.vide.js"></script>
+  <script src="../js/jquery.counterup.min.js"></script>
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/waypoints.min.js"></script>
+  <script src="../js/form-validator.min.js"></script>
+  <script src="../js/contact-form-script.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+
+</html>
